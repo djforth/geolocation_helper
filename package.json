@@ -1,6 +1,6 @@
 {
   "name": "@djforth/geolocation_helper",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A small Geolocation api helper",
   "main": "index.js",
   "scripts": {
