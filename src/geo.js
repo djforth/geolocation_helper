@@ -51,7 +51,7 @@ module.exports = function(wait){
   if (!geo_loc) return;
 
   if (wait){
-    timeout = addTimeout(wait);
+    timeout = addTimeout(geo_loc, wait);
     remove  = timeout.remove;
   }
 
