@@ -4,42 +4,14 @@
   "description": "A small Geolocation api helper",
   "main": "index.js",
   "scripts": {
-    "build": "babel src -x '.js'  -d lib",
-    "build:watch": "babel src -x '.js' -w --source-maps  -d lib",
-    "lint": "eslint src/**",
-    "lint:tests": "eslint spec/**",
-    "test": "npm run lint && asset-pipeline-karma",
-    "test:watch": "asset-pipeline-karma -w",
-    "test:mac": "asset-pipeline-karma -b"
+    "build": "NODE_ENV=production babel src/geo.js --out-file index.js",
+    "build:watch": "babel src/geo.js -w --source-maps  -out-file index.js",
+    "lint": "eslint src/** --fix",
+    "lint:tests": "eslint __tests__/** --fix",
+    "test": "jest --coverage --config jest.config.json",
+    "test:watch": "jest --watch --config jest.config.json"
   },
-  "assets": {
-    "assets_in": "./src",
-    "assets_out": "./lib",
-    "karma": {
-      "input": "./spec"
-    }
-  },
-  "babel": {
-    "presets": [
-      "es2015"
-    ]
-  },
-  "browserify": {
-    "transform": [
-      [
-        "babelify",
-        {
-          "presets": [
-            "es2015"
-          ]
-        }
-      ]
-    ]
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/djforth/geolocation_helper.git"
-  },
+  "repository": "git+https://github.com/djforth/geolocation_helper.git",
   "keywords": [
     "Geolocation",
     "HTML5",
@@ -55,19 +27,35 @@
   },
   "homepage": "https://github.com/djforth/geolocation_helper#readme",
   "devDependencies": {
-    "@djforth/ap_karma": "^1.0.0",
-    "@djforth/morse-jasmine": "^1.0.8",
-    "babel": "^6.5.2",
-    "babel-cli": "^6.6.5",
-    "babel-eslint": "^5.0.0",
-    "babel-polyfill": "^6.6.1",
-    "babel-preset-es2015": "^6.6.0",
-    "eslint": "^2.3.0",
-    "eslint-config-google": "^0.4.0",
-    "estraverse-fb": "^1.3.1",
-    "lodash": "^4.6.1"
+    "@djforth/jest-call-helpers": "^1.1.0",
+    "@djforth/stubs-spy-manager-jest": "^1.1.1",
+    "babel-cli": "^6.24.1",
+    "babel-core": "^6.25.0",
+    "babel-eslint": "^7.2.3",
+    "babel-jest": "^20.0.3",
+    "babel-plugin-add-module-exports": "^0.2.1",
+    "babel-plugin-lodash": "^3.2.11",
+    "babel-plugin-rewire": "^1.1.0",
+    "babel-plugin-rewire-ignore-coverage": "^2.0.2",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-polyfill": "^6.23.0",
+    "babel-preset-babili": "^0.1.4",
+    "babel-preset-env": "^1.5.2",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-es2016": "^6.24.1",
+    "babel-preset-es2017": "^6.24.1",
+    "browserslist": "^2.1.5",
+    "eslint": "^4.1.1",
+    "eslint-config-morsedigital-jest": "^2.0.0",
+    "jest": "^20.0.4",
+    "lodash": "^4.17.4"
   },
   "peerDependencies": {
-    "lodash": "^4.6.1"
+    "lodash": ">=4.17.0"
+  },
+  "dependencies": {
+    "@djforth/jest-matchers": "^1.2.0",
+    "immutable": "^3.8.1",
+    "moment": "^2.18.1"
   }
 }

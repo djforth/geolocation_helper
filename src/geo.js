@@ -1,5 +1,7 @@
-const _ = {
-  isFunction: require('lodash/isFunction')
+import _ from 'lodash';
+
+const GeoLocation = ()=>{
+  return navigator.geolocation;
 };
 
 function addTimeout(geo, time){
@@ -34,11 +36,7 @@ function geoFail(error, clearTimeout){
   };
 }
 
-function geolocation(){
-  return navigator.geolocation;
-}
-
-module.exports = function(wait){
+export default function(wait){
   let fail
     , geo_id
     , geo_loc
@@ -46,7 +44,7 @@ module.exports = function(wait){
     , success
     , timeout;
 
-  geo_loc = geolocation();
+  geo_loc = GeoLocation();
 
   if (!geo_loc) return;
 
