@@ -1,3 +1,4 @@
-spec
-karma.conf.js
-npm-shrinkwrap.json
+coverage
+src
+jest.config.json
+__tests__
