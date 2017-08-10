@@ -1,6 +1,11 @@
 {
   "presets": [
-    "es2015",
+    [
+      "es2015",
+      {
+        "modules": false
+      }
+    ],
     "es2016",
     "es2017"
   ],
@@ -17,15 +22,27 @@
         ],
         "rewire"
       ]
+      , "presets": [
+        ["env", {
+          "modules": 'commonjs',
+          "targets": {
+              "node": 4,
+              "browsers": [
+                "last 2 versions",
+                "chrome >= 55",
+                "IE >= 11"
+              ]
+            }
+        }]
+      ]
     },
     "production": {
       "plugins": [
-        "lodash",
-        "add-module-exports"
+        "lodash"
       ]
       , "presets": [
         ["env", {
-          "modules": "umd",
+          "modules": false,
           "targets": {
               "node": 4,
               "browsers": [

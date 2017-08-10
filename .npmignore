@@ -2,3 +2,6 @@ coverage
 src
 jest.config.json
 __tests__
+rollup.config.js
+.babelrc
+.eslintrc

@@ -1,10 +1,10 @@
 {
   "name": "@djforth/geolocation_helper",
-  "version": "2.0.0",
+  "version": "2.0.3",
   "description": "A small Geolocation api helper",
   "main": "index.js",
   "scripts": {
-    "build": "NODE_ENV=production babel src/geo.js --out-file index.js",
+    "build": "BABEL_ENV=production rollup -c",
     "build:watch": "babel src/geo.js -w --source-maps  -out-file index.js",
     "lint": "eslint src/** --fix",
     "lint:tests": "eslint __tests__/** --fix",
@@ -28,6 +28,7 @@
   "homepage": "https://github.com/djforth/geolocation_helper#readme",
   "devDependencies": {
     "@djforth/jest-call-helpers": "^1.1.0",
+    "@djforth/jest-matchers": "^1.2.0",
     "@djforth/stubs-spy-manager-jest": "^1.1.1",
     "babel-cli": "^6.24.1",
     "babel-core": "^6.25.0",
@@ -47,11 +48,17 @@
     "browserslist": "^2.1.5",
     "eslint": "^4.1.1",
     "eslint-config-morsedigital-jest": "^2.0.0",
+    "immutable": "^3.8.1",
     "jest": "^20.0.4",
     "lodash": "^4.17.4",
-    "@djforth/jest-matchers": "^1.2.0",
-    "immutable": "^3.8.1",
-    "moment": "^2.18.1"
+    "moment": "^2.18.1",
+    "rollup-plugin-uglify": "^2.0.1",
+    "babel-preset-es2015-rollup": "^3.0.0",
+    "rollup": "^0.45.2",
+    "rollup-plugin-babel": "^3.0.1",
+    "rollup-plugin-commonjs": "^8.1.0",
+    "rollup-plugin-node-resolve": "^3.0.0",
+    "rollup-plugin-replace": "^1.1.1"
   },
   "peerDependencies": {
     "lodash": ">=4.17.0"
