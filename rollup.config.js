@@ -18,8 +18,8 @@ export default {
     , commonjs()
     , babel({
       exclude: 'node_modules/**' // only transpile our source code
-      , externalHelpers: true
-      , plugins: ['external-helpers']
+      // , externalHelpers: true
+      // , plugins: ['external-helpers']
       // , runtimeHelpers: true
     })
     , replace({
