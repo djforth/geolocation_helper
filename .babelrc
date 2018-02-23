@@ -30,6 +30,7 @@
     "production": {
       "plugins": [
         "lodash"
+        , "add-module-exports"
       ]
       , "presets": [
         ["env", {
